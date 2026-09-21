@@ -8,16 +8,18 @@ Trabalho há mais de 3 anos com Java (Spring Boot), Node.js e React, e gosto de 
 
 ### [Serverless Ingest Pipeline](https://github.com/eduardofcaro1/serverless-ingest-pipeline)
 
-API que recebe lotes de leituras de dispositivos, guarda o payload original no S3, normaliza os dados e grava tudo em PostgreSQL. Roda em AWS Lambda dentro de uma VPC privada, com a infraestrutura definida em Terraform.
+API que recebe lotes de leituras de dispositivos, guarda o payload original no S3, normaliza os dados e grava tudo em PostgreSQL. Foi projetada para rodar em AWS Lambda dentro de uma VPC privada, com a infraestrutura definida em Terraform, e também roda localmente com Docker.
 
 É a versão pública e genérica de um padrão que uso no trabalho: dados vindos de aplicações mobile, processados por Lambda, armazenados no S3 e persistidos no banco.
+
+Minha stack principal é Java, mas nesta função escolhi Node.js com TypeScript pelo cold start menor e pelo consumo reduzido de memória em um cenário serverless. O README do repositório explica essa e outras decisões de arquitetura.
 
 O que tem de interessante:
 
 - Idempotência no banco: reenvios do mesmo lote não geram duplicatas
 - Rede privada sem NAT gateway, usando VPC endpoints para S3 e Secrets Manager
 - Migrações de banco executadas por uma Lambda dentro da VPC
-- Deploy pelo GitHub Actions com OIDC, sem chaves AWS guardadas no GitHub
+- Pipeline de deploy pelo GitHub Actions com OIDC, sem chaves AWS guardadas no GitHub
 - 25 testes unitários e 8 testes de integração com PostgreSQL real
 - Ambiente local com Docker Compose, para rodar tudo sem conta na AWS
 
