@@ -4,7 +4,24 @@ Desenvolvedor Full Stack com foco em backend Java e infraestrutura na AWS, de Ca
 
 Trabalho há mais de 3 anos com Java (Spring Boot), Node.js e React, e gosto de arquitetura backend, design de APIs e nuvem. Hoje sou Analista de Sistemas na Usina São Domingos, onde modernizei sistemas legados, automatizei infraestrutura na AWS e coloquei em produção pipelines de CI/CD. Também estou cursando a pós-graduação em Internet das Coisas no IFSP Catanduva.
 
-## Projeto em destaque
+## Projetos em destaque
+
+### [Agendamento de Cargas API](https://github.com/eduardofcaro1/agendamento-cargas-api)
+
+API REST em Java 21 e Spring Boot para agendar a chegada de veículos de carga em um pátio logístico. É a versão pública e genérica do sistema de agendamento que desenvolvi no trabalho.
+
+O ponto central é a garantia de que dois veículos nunca ocupam o mesmo ponto ao mesmo tempo, mesmo com requisições simultâneas. Em vez de conferir conflitos no código, a regra fica no PostgreSQL, com uma *exclusion constraint*, e um teste dispara 10 requisições concorrentes para o mesmo horário e confirma que só uma é aceita.
+
+O que tem de interessante:
+
+- Conflito de horário garantido pelo banco, sem condição de corrida
+- Autenticação stateless com Spring Security e JWT, senhas com BCrypt e perfis `ADMIN` e `OPERADOR`
+- Eventos publicados em fila SQS com o padrão *transactional outbox*, sem perder mensagens entre o banco e a fila, e consumidor idempotente
+- Regras de negócio puras, fora do Spring, e erros no formato RFC 7807
+- Migrações com Flyway e testes de integração com PostgreSQL e ElasticMQ reais via Testcontainers
+- Pipeline de CI no GitHub Actions
+
+Tecnologias: Java 21, Spring Boot, Spring Security, JPA/Hibernate, PostgreSQL, Flyway, AWS SQS (ElasticMQ local), Testcontainers, Docker, GitHub Actions.
 
 ### [Serverless Ingest Pipeline](https://github.com/eduardofcaro1/serverless-ingest-pipeline)
 
