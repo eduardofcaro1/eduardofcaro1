@@ -36,11 +36,33 @@ Tecnologias: TypeScript, Node.js 22, AWS Lambda, API Gateway, S3, RDS PostgreSQL
 
 ## O que já entreguei no trabalho
 
-- Migração de um sistema legado de VRaptor para Spring Boot, com arquitetura modular
-- Pipeline de CI/CD com GitHub Actions e SSM que reduziu o deploy de cerca de 5 minutos para poucos segundos
-- Acesso seguro ao banco por túnel SSM, eliminando a dependência de bastion com lista fixa de IPs
-- Função Lambda que recebe dados de aplicações mobile, envia ao S3, processa e grava no banco
-- Migração de MySQL para Amazon RDS e migração de AdonisJS 4 para AdonisJS 5 com TypeScript
+Na Usina São Domingos, desde março de 2024, primeiro como Assistente de T.I. e hoje como Analista de Sistemas Júnior.
+
+**Backend e modernização de sistemas legados**
+
+- Liderei a refatoração de um sistema legado de VRaptor para Spring Boot, com arquitetura modular que reduziu o tempo de onboarding de novos desenvolvedores e acelerou as entregas
+- Liderei a migração do backend de AdonisJS 4 (JavaScript) para AdonisJS 5 com TypeScript, adotando tipagem estática para facilitar a manutenção
+- Desenvolvo e mantenho APIs RESTful em Java e Spring Boot que integram sistemas corporativos em produção
+- Liderei a migração completa do código do app mobile para AndroidX, deixando o aplicativo disponível para 100% da frota de dispositivos da empresa e reduzindo custos de compra de hardware
+
+**Cloud e infraestrutura na AWS**
+
+- Implementei o pipeline de CI/CD com GitHub Actions e SSM, reduzindo o deploy de cerca de 5 minutos, feito manualmente, para poucos segundos
+- Implementei acesso seguro ao banco de dados por túnel SSM, eliminando a dependência de um bastion com lista fixa de IPs, com gestão de usuários e policies no IAM
+- Criei, configurei e fiz deploy em instâncias EC2 (Node.js, backend Java e Tomcat)
+- Configurei Target Group, Load Balancer e Route 53 para expor uma aplicação interna com endereço fixo e acesso externo estável
+
+**Dados e automação**
+
+- Criei e liderei tecnicamente uma função Lambda que recebe dados de aplicações mobile, envia ao S3, processa as informações e grava no banco, eliminando um processo manual
+- Participei da migração de MySQL para Amazon RDS, do planejamento aos testes e à validação
+- Trabalhei na integração de dados entre MySQL e Oracle, garantindo consistência entre os sistemas
+
+**Aplicações full stack e mobile**
+
+- Desenvolvi o Sistema de Agendamento de Cargas (React, Java e MySQL), que eliminou 100% dos conflitos de agenda e reduziu o tempo médio de espera no pátio logístico
+- Desenvolvi dashboards web em React com cadastro, edição, exclusão e replicação de dados
+- Desenvolvi soluções mobile com Android (Java) e Flutter/Dart
 
 ## Contato
 
